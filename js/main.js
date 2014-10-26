@@ -21,13 +21,19 @@ function updateCount() {
     countDiv.innerHTML = count;
 }
 
-try {
-    $(window).resize(function () {
+$(window).resize(function () {
 
-        if (window.innerHeight <= window.innerWidth) {
-            $("#count").css({'font-size': '60vh'});
-        } else {
-            $("#count").css({'font-size': '50vw'})
-        }
-    });
-}catch(err){alert(err.message)}
+    if (window.innerHeight <= window.innerWidth) {
+        $("#count").css({'font-size': '60vh'});
+    } else {
+        $("#count").css({'font-size': '50vw'})
+    }
+});
+
+$("#start").click(function () {
+    $("#count").html(0);
+    $("#content").css({'display':'none'})
+    setInterval(function() {
+        alert("Game Over! You scored " + document.getElementById("count").innerHTML)},
+        10000)
+});
