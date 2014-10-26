@@ -2,6 +2,7 @@
   width: 100%;
   height: 100vh;
   position: absolute;
+  z-index: 100;
 }
 
 .noselect {
@@ -9,4 +10,23 @@
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+}
+
+#content {
+  width: 40%;
+  height: 40%;
+  margin: auto;
+  text-align: center;
+
+  position: absolute;
+  top:0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+#count {
+  font-size: 200pt;
+  color: rgba(90, 90, 90, 0.52);
+  line-height: normal;
 }

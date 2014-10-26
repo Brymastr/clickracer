@@ -7,3 +7,7 @@ Login page.
 - Google
 
 Database
+
+Change background colour on click
+
+Track location of clicks and then create a heat map of everywhere a user has clicked
