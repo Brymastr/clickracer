@@ -11,3 +11,9 @@ Database
 Change background colour on click
 
 Track location of clicks and then create a heat map of everywhere a user has clicked
+
+Smooth animation when resizing window
+
+Credit:
+http://www.dafont.com/code.font
+http://www.dafont.com/roboto.font
