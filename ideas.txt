@@ -1,0 +1,9 @@
+HTML5 animation for moving the image across the screen. Could also animate the image to flap wings or something.
+
+Character selection.
+
+Login page.
+- Facebook
+- Google
+
+Database
