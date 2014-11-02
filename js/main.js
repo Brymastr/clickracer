@@ -30,10 +30,30 @@ $(window).resize(function () {
     }
 });
 
+// Game function
 $("#start").click(function () {
     $("#count").html(0);
-    $("#content").css({'display':'none'})
+    $("#content").css({'display':'none'});
+
     setInterval(function() {
-        alert("Game Over! You scored " + document.getElementById("count").innerHTML)},
-        10000)
+        var count = document.getElementById("count").innerHTML;
+        gameOver(count)
+        },
+        3000)
+});
+
+function gameOver(score) {
+    try {
+        $('#score').html(score);
+        $('#finish')
+            .css({'display':'inline-block'})
+            .animate({
+                top: 0
+            }, 400);
+        $('#canvas').css({'pointer-events':'none'});
+    }catch (err){alert(err.message)}
+}
+
+$('#again').click(function() {
+    location.reload();
 });

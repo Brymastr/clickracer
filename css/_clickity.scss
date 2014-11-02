@@ -51,19 +51,7 @@ span {
   position: relative;
   z-index: 50;
 
-  background:#ffffff;
-  -webkit-box-sizing: content-box;
-  -moz-box-sizing: content-box;
-  box-sizing: content-box;
-  border: none;
-  -webkit-border-radius: 37px;
-  border-radius: 37px;
-  font: normal 16px/1 "Times New Roman", Times, serif;
-  color: black;
-  -o-text-overflow: ellipsis;
-  text-overflow: ellipsis;
-  -webkit-box-shadow: 0 0 26px 15px white ;
-  box-shadow: 0 0 26px 15px white ;
+
 
   span {
     cursor: pointer;
@@ -81,4 +69,35 @@ span {
   left: 0;
   right: 0;
 
+}
+
+#finish {
+  margin: auto;
+  text-align: center;
+  vertical-align: middle;
+  position: relative;
+  z-index: 50;
+  top: 60vh;
+  display: none;
+
+  #again {
+    cursor: pointer;
+  }
+}
+
+.overlay {
+  background:#ffffff;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  border: none;
+  -webkit-border-radius: 37px;
+  border-radius: 37px;
+  font: normal 16px/1 "Times New Roman", Times, serif;
+  color: black;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  -webkit-box-shadow: 0 0 26px 15px white ;
+  box-shadow: 0 0 26px 15px white ;
+  //  display: none;
 }
