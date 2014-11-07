@@ -11,8 +11,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-        {{ HTML::style('style/normalize.css'); }}
-        {{ HTML::style('style/main.css'); }}
+        {{ HTML::style('css/normalize.css'); }}
+        {{ HTML::style('css/main.css'); }}
         {{ HTML::script('js/vendor/modernizr-2.6.2.min.js'); }}
     </head>
     <body>

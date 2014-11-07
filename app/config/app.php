@@ -78,7 +78,7 @@ return array(
 	|
 	*/
 
-	'key' => 'A top secret key appears!',
+	'key' => 'Awildsecretkeey!',
 
 	'cipher' => MCRYPT_RIJNDAEL_128,
 
