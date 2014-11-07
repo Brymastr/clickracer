@@ -39,7 +39,7 @@ $("#start").click(function () {
         var count = document.getElementById("count").innerHTML;
         gameOver(count)
         },
-        10000)
+        1000)
 });
 
 function gameOver(score) {

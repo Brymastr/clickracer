@@ -94,9 +94,6 @@ textarea {
 h1 {
   font-size: 30pt; }
 
-span {
-  font-size: 20pt; }
-
 .container {
   width: 100%;
   height: 100%;
@@ -132,10 +129,10 @@ span {
   vertical-align: middle;
   position: relative;
   z-index: 50; }
-  #content span {
-    cursor: pointer;
+  #content div {
     position: relative;
-    z-index: 100; }
+    z-index: 100;
+    font-size: 20pt; }
 
 #count {
   color: rgba(135, 135, 135, 0.49);
@@ -154,8 +151,13 @@ span {
   z-index: 50;
   top: 60vh;
   display: none; }
-  #finish #again {
-    cursor: pointer; }
+  #finish div {
+    position: relative;
+    z-index: 100;
+    font-size: 20pt; }
+
+.clickable {
+  cursor: pointer; }
 
 .overlay {
   background: #ffffff;
@@ -225,7 +227,7 @@ span {
   width: auto; }
 
 /*
- * Hide visually and from screenreaders, but maintain layout
+ * Hide visually and from screenreaders, but maintain layouts
  */
 .invisible {
   visibility: hidden; }
