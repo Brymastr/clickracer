@@ -1,5 +1,7 @@
+$link-color: black;
+
 * {
-  font-family: Roboto-Regular;
+  font-family: Roboto-Thin;
 }
 
 h1 {
@@ -47,10 +49,13 @@ h1 {
   position: relative;
   z-index: 50;
 
-  div {
+  a, div {
     position: relative;
     z-index: 100;
     font-size: 20pt;
+    text-decoration: none;
+    color: $link-color;
+    display: block;
   }
 }
 
@@ -74,10 +79,13 @@ h1 {
   top: 60vh;
   display: none;
 
-  div {
+  a, div {
     position: relative;
     z-index: 100;
     font-size: 20pt;
+    text-decoration: none;
+    color: $link-color;
+    display: block;
   }
 }
 

@@ -16,20 +16,19 @@
     <div id="finish" class="overlay">
         <h1>Game Over</h1>
         <div>SCORE: <span id="score"></span></div>
-        <div id="again" class="clickable">PLAY AGAIN</div>
+        <a id="again" class="clickable">PLAY AGAIN</a>
     </div>
 
     <div id="content" class="overlay">
         <h1>Welcome to ClickRacer!</h1>
-        <div id="start" class="clickable">START</div>
+        <a id="start" class="clickable">START</a>
         <?php if(!Auth::check()) {?>
-            <div id="login" class="clickable">LOGIN</div>
-            <div id="register" class="clickable">REGISTER</div>
+            {{ HTML::linkRoute('sessions.create', 'LOGIN') }}
+            {{ HTML::linkRoute('users.create', 'REGISTER') }}
         <?php } ?>
 
     </div>
 
 </div>
-
 
 @stop
