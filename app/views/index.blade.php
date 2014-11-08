@@ -2,7 +2,17 @@
 
 @section('content')
 
-<?php $user = Auth::user(); ?>
+<?php
+
+$user = Auth::user();
+if(Auth::check()) {
+    $highscore = DB::table('scores')->where('user_id', $user->id)->orderBy('score', 'desc')->first();
+    $highscore = $highscore->score;
+} else {
+    $highscore = 0;
+}
+
+ ?>
 
 <div id="container" class="container noselect">
 
@@ -29,6 +39,7 @@
             } else {
                 echo "<h1>Welcome, $user->username</h1>";
             }
+            echo "<p>High Score: $highscore</p>";
         } else {
             echo "<h1>Welcome to ClickRacer!</h1>";
         }
