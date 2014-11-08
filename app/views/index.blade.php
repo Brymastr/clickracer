@@ -2,6 +2,8 @@
 
 @section('content')
 
+<?php $user = Auth::user(); ?>
+
 <div id="container" class="container noselect">
 
     <!--[if lt IE 7]>
@@ -20,9 +22,22 @@
     </div>
 
     <div id="content" class="overlay">
-        <h1>Welcome to ClickRacer!</h1>
+        <?php if(Auth::check()) {
+            if(!empty($user->firstname)) {
+                echo "<h1>Welcome, $user->firstname</h1>";
+            } else {
+                echo "<h1>Welcome, $user->username</h1>";
+            }
+        } else {
+            echo "<h1>Welcome to ClickRacer!</h1>";
+        }
+
+        ?>
+
         <a id="start" class="clickable">START</a>
-        <?php if(!Auth::check()) {?>
+        <?php if(Auth::check()) { ?>
+            <a href="{{ URL::to('logout') }}">LOGOUT</a>
+        <?php } else { ?>
             {{ HTML::linkRoute('sessions.create', 'LOGIN') }}
             {{ HTML::linkRoute('users.create', 'REGISTER') }}
         <?php } ?>

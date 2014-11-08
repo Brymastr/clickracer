@@ -11,13 +11,10 @@
 |
 */
 
-//Route::get('/', function()
-//{
-//	return View::make('index');
-//});
-
 Route::get('/', 'PagesController@index');
 
 Route::resource('users', 'UsersController');
 
 Route::resource('sessions', 'SessionsController');
+
+Route::get('logout', 'SessionsController@destroy');
