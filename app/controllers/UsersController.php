@@ -2,6 +2,12 @@
 
 class UsersController extends \BaseController {
 
+    protected $user;
+
+    public function __construct(User $user) {
+        $this->user = $user;
+    }
+
 	/**
 	 * Display a listing of the resource.
 	 *
@@ -31,7 +37,29 @@ class UsersController extends \BaseController {
 	 */
 	public function store()
 	{
-		//
+        $date = new \DateTime;
+
+        $input = Input::all();
+
+        if(! $this->user->fill($input)->isValid()) {
+            return Redirect::back()->withInput()->withErrors($this->user->messages);
+        }
+
+        $this->user->username = Input::get('username');
+
+        if(!empty($_POST['firstname'])) {
+            $this->user->firstname = Input::get('firstname');
+        }
+
+        $this->user->password = Hash::make(Input::get('password'));
+
+        $this->user->created_at = $date;
+
+        $this->user->updated_at = $date;
+
+        $this->user->save();
+
+        return Redirect::to('/');
 	}
 
 
