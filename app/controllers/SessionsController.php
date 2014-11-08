@@ -32,7 +32,17 @@ class SessionsController extends \BaseController {
 	 */
 	public function store()
 	{
-		//
+		if(Auth::attempt(array(
+            'username' => Input::get('username'),
+            'password' => Input::get('password')
+        ))) {
+            Auth::user();
+            return Redirect::to('/');
+        }
+
+        return Redirect::back()
+            ->with('message', 'Email/password incorrect')
+            ->withInput();
 	}
 
 

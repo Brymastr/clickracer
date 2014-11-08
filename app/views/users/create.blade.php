@@ -16,7 +16,7 @@
     {{ Form::password('password', array('placeholder' => 'Password', 'id' => 'password')) }}
     {{ $errors->first('email', '<span class=error>:message</span>') }}
 
-    {{ Form::submit('REGISTER') }}
+    {{ Form::submit('register') }}
 
 
 </div><!-- Close form-container -->
