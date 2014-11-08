@@ -35,23 +35,46 @@ $("#start").click(function () {
     $("#count").html(0);
     $("#content").css({'display':'none'});
 
-    setInterval(function() {
-        var count = document.getElementById("count").innerHTML;
-        gameOver(count)
+    var interval = setInterval(function() {
+            var count = document.getElementById('count').innerHTML;
+            gameOver(count);
+            saveScore(count);
+            clearInterval(interval);
         },
-        1000)
+        5000
+    );
+
+
 });
+
+function saveScore(score) {
+    try {
+        var $form = $('#save-game');
+        $.post(
+            $form.prop( 'action' ),
+            {
+                "score": $( '#submit-score' ).val()
+            },
+            function( data ) {
+                //do something with data/response returned by server
+            },
+            'json'
+        );
+
+    } catch(err) {alert("saveScore(): " + err.message);}
+}
 
 function gameOver(score) {
     try {
         $('#score').html(score);
+        $('#submit-score').attr('value', score);
         $('#finish')
-            .css({'display':'inline-block'})
+            .css({'display': 'inline-block'})
             .animate({
                 top: 0
             }, 400);
-        $('#canvas').css({'pointer-events':'none'});
-    }catch (err){alert(err.message)}
+        $('#canvas').css({'pointer-events': 'none'});
+    } catch(err) {alert("gameOver(): " + err.message);}
 }
 
 $('#again').click(function() {

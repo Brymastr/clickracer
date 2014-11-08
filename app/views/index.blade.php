@@ -13,7 +13,8 @@
     <!-- Div for accepting clicks. Expands entire size of screen -->
     <div id="canvas"></div>
 
-    <div id="count">0</div>
+
+        <div id="count">0</div>
 
     <div id="finish" class="overlay">
         <h1>Game Over</h1>
@@ -35,6 +36,7 @@
         ?>
 
         <a id="start" class="clickable">START</a>
+
         <?php if(Auth::check()) { ?>
             <a href="{{ URL::to('logout') }}">LOGOUT</a>
         <?php } else { ?>
@@ -45,5 +47,9 @@
     </div>
 
 </div>
+
+{{ Form::open(array('route' => 'game.store', 'id' => 'save-game')) }}
+    {{ Form::text('submit-score', 0, array('id' => 'submit-score')) }}
+{{ Form::close() }}
 
 @stop

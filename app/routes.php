@@ -11,7 +11,9 @@
 |
 */
 
-Route::get('/', 'PagesController@index');
+Route::get('/', 'GameController@index');
+
+Route::resource('game', 'GameController');
 
 Route::resource('users', 'UsersController');
 
