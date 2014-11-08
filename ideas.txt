@@ -1,5 +1,7 @@
 HTML5 animation for moving the image across the screen. Could also animate the image to flap wings or something.
 
+Change counter number width to be the height times 2
+
 Character selection.
 
 Login page.
