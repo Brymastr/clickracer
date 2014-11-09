@@ -41,10 +41,8 @@ $("#start").click(function () {
             saveScore(count);
             clearInterval(interval);
         },
-        5000
+        10000
     );
-
-
 });
 
 function saveScore(score) {

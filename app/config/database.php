@@ -57,7 +57,7 @@ return array(
 			'host'      => 'localhost',
 			'database'  => 'clickracer',
 			'username'  => 'root',
-			'password'  => 'root',
+			'password'  => 'Dorsay13',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',
