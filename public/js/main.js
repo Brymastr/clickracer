@@ -43,8 +43,6 @@ $("#start").click(function () {
         },
         10000
     );
-
-
 });
 
 function saveScore(score) {

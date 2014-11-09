@@ -59,6 +59,23 @@ class UsersController extends \BaseController {
 
         $this->user->save();
 
+        // Log in after creating an account
+        if(Auth::attempt(array(
+            'username' => Input::get('username'),
+            'password' => Input::get('password')
+        ))) {
+            Auth::user();
+        }
+
+        $user = Auth::user();
+        // Create an initial score of 0
+        $score = new Score;
+        $score->score = 0;
+        $score->user_id = $user->id;
+        $score->created_at = $date;
+        $score->updated_at = $date;
+        $score->save();
+
         return Redirect::to('/');
 	}
 
