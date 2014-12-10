@@ -12,14 +12,10 @@
 
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     {{ HTML::style('css/normalize.css'); }}
-    {{ HTML::style('vendor/bootstrap/css/bootrstrap.min.css'); }}
-    {{ HTML::style('vendor/bootstrap/css/bootrstrap-theme.min.css'); }}
+    {{ HTML::style('vendor/bootstrap/css/bootstrap.min.css'); }}
+    {{ HTML::style('vendor/bootstrap/css/bootstrap-theme.min.css'); }}
     {{ HTML::style('css/main.css'); }}
     {{ HTML::script('js/vendor/modernizr-2.6.2.min.js'); }}
-
-
-    <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
-
     <link href="http://getbootstrap.com/examples/sticky-footer/sticky-footer.css" rel="stylesheet">
 </head>
 <body>
