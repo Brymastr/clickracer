@@ -16,6 +16,7 @@
     {{ HTML::style('vendor/bootstrap/css/bootstrap-theme.min.css'); }}
     {{ HTML::style('css/main.css'); }}
     {{ HTML::script('js/vendor/modernizr-2.6.2.min.js'); }}
+
     <link href="http://getbootstrap.com/examples/sticky-footer/sticky-footer.css" rel="stylesheet">
 </head>
 <body>
