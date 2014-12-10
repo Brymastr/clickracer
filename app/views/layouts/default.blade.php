@@ -12,8 +12,15 @@
 
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     {{ HTML::style('css/normalize.css'); }}
+    {{ HTML::style('vendor/bootstrap/css/bootrstrap.min.css'); }}
+    {{ HTML::style('vendor/bootstrap/css/bootrstrap-theme.min.css'); }}
     {{ HTML::style('css/main.css'); }}
     {{ HTML::script('js/vendor/modernizr-2.6.2.min.js'); }}
+
+
+    <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="http://getbootstrap.com/examples/sticky-footer/sticky-footer.css" rel="stylesheet">
 </head>
 <body>
 <!-- Google Analytics -->
@@ -22,12 +29,20 @@
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
     ga('create', 'UA-56389593-1', 'auto');
     ga('require', 'displayfeatures');
     ga('send', 'pageview');
 </script>
-    @yield('content')
+
+    <div class="container">
+        <div class="page-header">Page Header</div>
+    </div>
+    <footer class="footer">
+        <div class="container">
+            <p class="text-muted">dasdsfaf</p>
+        </div>
+    </footer>
+
 
     <!-- Scripts -->
     {{ HTML::script('//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js'); }}

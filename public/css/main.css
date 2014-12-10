@@ -94,20 +94,6 @@ textarea {
 h1 {
   font-size: 30pt; }
 
-.container {
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  overflow: hidden;
-  position: relative; }
-
-.container:before {
-  content: '';
-  display: inline-block;
-  height: 100%;
-  vertical-align: middle;
-  margin-right: -0.25em; }
-
 #canvas {
   width: 100%;
   height: 100%;
@@ -179,6 +165,18 @@ h1 {
   text-overflow: ellipsis;
   -webkit-box-shadow: 0 0 26px 15px white;
   box-shadow: 0 0 26px 15px white; }
+
+#save-game {
+  display: none; }
+
+.vertical-center {
+  min-height: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center; }
+
+#menu {
+  background-color: #204d74; }
 
 .form-container {
   height: 100%;
