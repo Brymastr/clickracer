@@ -83,8 +83,14 @@ $(document).ready(function() {
     $("#menu")
         .transition({height: '100vh', delay: 500}, 500, 'snap')
         .find("div").css({'display': 'normal'});
+
+    $("div[id$='game']").css({'display': 'none'});
+
 });
 
 $("#start").click(function() {
-    $("#menu").transition({height: '0', delay: 200}, 500, 'snap')
-})
+    $("#timed-game").css({'display': ''}).addClass('vertical-center');
+    $("#menu").transition({height: '0', delay: 100}, 500, 'snap', function () {
+        $(this).css({'display': 'none'});
+    });
+});

@@ -11,7 +11,13 @@ if(Auth::check()) {
 } else {
     $highscore = 0;
 }
+
 ?>
+
+<div id="timed-game" class="row">
+    <div id="click-counter" class="col-md-12 text-center">Click Counter</div>
+
+</div>
 
 
 @stop
