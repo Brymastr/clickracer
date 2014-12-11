@@ -14,9 +14,9 @@
     {{ HTML::style('css/normalize.css'); }}
     {{ HTML::style('vendor/bootstrap/css/bootstrap.min.css'); }}
     {{ HTML::style('vendor/bootstrap/css/bootstrap-theme.min.css'); }}
+    {{ HTML::style('css/animate.css'); }}
     {{ HTML::style('css/main.css'); }}
     {{ HTML::script('js/vendor/modernizr-2.6.2.min.js'); }}
-
     <link href="http://getbootstrap.com/examples/sticky-footer/sticky-footer.css" rel="stylesheet">
 </head>
 <body>
@@ -31,20 +31,41 @@
     ga('send', 'pageview');
 </script>
 
+<!--[if lt IE 7]>
+<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+<![endif]-->
+
+<!-- Div for accepting clicks. Expands entire size of screen -->
+{{--<div id="canvas"></div>--}}
+
     <div class="container">
-        <div class="page-header">Page Header</div>
+        @yield('content')
+
+
     </div>
-    <footer class="footer">
+    <footer id="menu" class="footer">
         <div class="container">
-            <p class="text-muted">dasdsfaf</p>
+            <div class="row">
+                <div class="col-md-6 col-xs-12 text-nowrap text-center">
+                    <button id="start" type="button" class="btn-lg btn-block btn-primary">START</button>
+                </div>
+                <div class="col-md-6 col-xs-12 text-nowrap text-center">
+                    <button type="button" class="btn-lg btn-block btn-primary">LOGIN</button>
+                </div>
+            </div>
         </div>
     </footer>
 
+
+    {{ Form::open(array('route' => 'game.store', 'id' => 'save-game')) }}
+        {{ Form::text('submit-score', 0, array('id' => 'submit-score')) }}
+    {{ Form::close() }}
 
     <!-- Scripts -->
     {{ HTML::script('//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js'); }}
     <script>window.jQuery || document.write('<script src="js/vendor/jquery-2.1.1.min.js"><\/script>')</script>
     {{ HTML::script('js/plugins.js'); }}
+    {{ HTML::script('vendor/jquery.transit.min.js'); }}
     {{ HTML::script('js/main.js'); }}
 
 </body>

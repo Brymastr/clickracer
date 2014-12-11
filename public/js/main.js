@@ -30,20 +30,20 @@ $(window).resize(function () {
     }
 });
 
-// Game function
-$("#start").click(function () {
-    $("#count").html(0);
-    $("#content").css({'display':'none'});
-
-    var interval = setInterval(function() {
-            var count = document.getElementById('count').innerHTML;
-            gameOver(count);
-            saveScore(count);
-            clearInterval(interval);
-        },
-        10000
-    );
-});
+//// Game function
+//$("#start").click(function () {
+//    $("#count").html(0);
+//    $("#content").css({'display':'none'});
+//
+//    var interval = setInterval(function() {
+//            var count = document.getElementById('count').innerHTML;
+//            gameOver(count);
+//            saveScore(count);
+//            clearInterval(interval);
+//        },
+//        10000
+//    );
+//});
 
 function saveScore(score) {
     try {
@@ -78,3 +78,13 @@ function gameOver(score) {
 $('#again').click(function() {
     location.reload();
 });
+
+$(document).ready(function() {
+    $("#menu")
+        .transition({height: '100vh', delay: 500}, 500, 'snap')
+        .find("div").css({'display': 'normal'});
+});
+
+$("#start").click(function() {
+    $("#menu").transition({height: '0', delay: 200}, 500, 'snap')
+})

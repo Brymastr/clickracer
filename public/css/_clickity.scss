@@ -8,6 +8,10 @@ h1 {
   font-size: 30pt;
 }
 
+body {
+  overflow: hidden;
+}
+
 .container {
 //  text-align: center;
 }
@@ -28,74 +32,8 @@ h1 {
   user-select: none;
 }
 
-#content {
-
-  margin: auto;
-  text-align: center;
-  display: inline-block;
-  vertical-align: middle;
-  position: relative;
-  z-index: 50;
-
-  a, div {
-    position: relative;
-    z-index: 100;
-    font-size: 20pt;
-    text-decoration: none;
-    color: $link-color;
-    display: block;
-  }
-}
-
-#count {
-  color: rgba(135, 135, 135, 0.49);
-  z-index: 1;
-  display: inline-block;
-  line-height: 100vh;
-  position: absolute;
-  left: 0;
-  right: 0;
-
-}
-
-#finish {
-  margin: auto;
-  text-align: center;
-  vertical-align: middle;
-  position: relative;
-  z-index: 50;
-  top: 60vh;
-  display: none;
-
-  a, div {
-    position: relative;
-    z-index: 100;
-    font-size: 20pt;
-    text-decoration: none;
-    color: $link-color;
-    display: block;
-  }
-}
-
 .clickable {
   cursor: pointer;
-}
-
-.overlay {
-  background:#ffffff;
-  -webkit-box-sizing: content-box;
-  -moz-box-sizing: content-box;
-  box-sizing: content-box;
-  border: none;
-  -webkit-border-radius: 37px;
-  border-radius: 37px;
-  font: normal 16px/1 "Times New Roman", Times, serif;
-  color: black;
-  -o-text-overflow: ellipsis;
-  text-overflow: ellipsis;
-  -webkit-box-shadow: 0 0 26px 15px white ;
-  box-shadow: 0 0 26px 15px white ;
-  //  display: none;
 }
 
 #save-game {
@@ -110,7 +48,23 @@ h1 {
 }
 
 #menu {
-//  width: 100vh;
   background-color: #204d74;
-//  height: 200px;
+  color: white;
+  height: 0;
+
+  -webkit-transition: all .5s ease;
+  -moz-transition: all .5s ease;
+  -ms-transition: all .5s ease;
+  -o-transition: all .5s ease;
+  transition: all .5s ease;
+
+  div {
+//    display: none;
+    text-align: center;
+  }
+
+}
+
+body:hover #menu {
+  height: 100vh;
 }
