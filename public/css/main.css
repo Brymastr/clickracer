@@ -63,6 +63,9 @@ body {
   #menu div {
     text-align: center; }
 
+.preface {
+  font-size: 50vmin; }
+
 #click-counter {
   font-size: 50vmin; }
 
