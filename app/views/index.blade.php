@@ -13,7 +13,7 @@ if(Auth::check()) {
 }
 
 ?>
-<div id="canvas"></div>
+<div id="canvas" oncontextmenu="return false"></div>
 
 
 <div id="timed-game" class="row noselect">

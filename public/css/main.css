@@ -61,7 +61,8 @@ body {
   -o-transition: all .5s ease;
   transition: all .5s ease; }
   #menu div {
-    text-align: center; }
+    text-align: center;
+    margin-top: 100px; }
 
 .preface {
   font-size: 50vmin; }

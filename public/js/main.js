@@ -1,4 +1,7 @@
 $("#canvas").click(function(event) {
+    if(event.button == 2) {
+        return false;
+    }
     canvas_x = event.pageX;
     canvas_y = event.pageY;
     //alert("X = " + canvas_x + " Y = " + canvas_y);
@@ -17,6 +20,7 @@ $(function() {
 function updateCount() {
     var countDiv = document.getElementById("click-counter");
     var count = countDiv.innerHTML;
+    if(count == 'GO') count = 0;
     count++;
     countDiv.innerHTML = count;
 }
@@ -90,26 +94,39 @@ $("#start").click(function() {
 
     $(".preface")
         .css({'display': ''})
-        .transition({rotateY: '90deg', delay: 1500}, function() {
+        .delay(1100)
+        .transition({rotateY: '90deg'}, function() {
             $(this).css({'display': 'none'});
             $('#click-counter')
-                .text(sec.toString())
+                .text(sec)
                 .css({'display': ''})
-                .css({'rotateY': '-90'})
+                .css({'rotateY': '90'})
                 .transition({rotateY: '0deg'}, function() {
+                    $('#click-counter')
+                        .delay(350)
+                        .transition({rotateY: '90deg'}, function() {
+                            $('#click-counter')
+                                .text(--sec)
+                                .transition({rotateY: '0deg'}, function() {
+                                    $('#click-counter')
+                                        .delay(350)
+                                        .transition({rotateY: '90deg'}, function() {
+                                            $('#click-counter')
+                                                .text(--sec)
+                                                .transition({rotateY: '0deg'}, function() {
+                                                    $('#click-counter')
+                                                        .delay(350)
+                                                        .transition({rotateY: '90deg'}, function() {
+                                                            $('#click-counter')
+                                                                .text('GO')
+                                                                .css({'rotateY': '0'});
 
-                    var timer = setInterval(function() {
-                        $('#click-counter')
-                            .transition({rotateY: '90deg'})
-                            .css({'rotateY': '90'})
-                            .text(--sec)
-                            .transition({rotateY: '0deg'});
-
-                        if (sec == 0) {
-                            $('#click-counter').text('GO!');
-                            clearInterval(timer);
-                        }
-                    }, 1000);
+                                                            $("#canvas").css({'display': ''});
+                                                        });
+                                                });
+                                        });
+                                });
+                        });
                 });
         }
     );
@@ -118,7 +135,6 @@ $("#start").click(function() {
 
     $("#menu").transition({height: '0', delay: 100}, 500, 'snap', function () {
         $(this).css({'display': 'none'});
-        $("#canvas").css({'display': ''});
     });
 
 
