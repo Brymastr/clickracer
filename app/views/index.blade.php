@@ -13,9 +13,11 @@ if(Auth::check()) {
 }
 
 ?>
+<div id="canvas"></div>
 
-<div id="timed-game" class="row">
-    <div id="click-counter" class="col-md-12 text-center">Click Counter</div>
+
+<div id="timed-game" class="row noselect">
+    <div id="click-counter" class="col-md-12 col-xs-12 text-center">0</div>
 
 </div>
 

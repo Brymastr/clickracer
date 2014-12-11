@@ -40,8 +40,6 @@
 
     <div class="container">
         @yield('content')
-
-
     </div>
     <footer id="menu" class="footer">
         <div class="container">

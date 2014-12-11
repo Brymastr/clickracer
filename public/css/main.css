@@ -31,7 +31,7 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 49; }
+  z-index: 100; }
 
 .noselect {
   -webkit-user-select: none;
@@ -63,8 +63,8 @@ body {
   #menu div {
     text-align: center; }
 
-body:hover #menu {
-  height: 100vh; }
+#click-counter {
+  font-size: 50vmin; }
 
 .form-container {
   height: 100%;

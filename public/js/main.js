@@ -15,7 +15,7 @@ $(function() {
 });
 
 function updateCount() {
-    var countDiv = document.getElementById("count");
+    var countDiv = document.getElementById("click-counter");
     var count = countDiv.innerHTML;
     count++;
     countDiv.innerHTML = count;
@@ -85,6 +85,7 @@ $(document).ready(function() {
         .find("div").css({'display': 'normal'});
 
     $("div[id$='game']").css({'display': 'none'});
+    $("#canvas").css({'display': 'none'});
 
 });
 
@@ -92,5 +93,7 @@ $("#start").click(function() {
     $("#timed-game").css({'display': ''}).addClass('vertical-center');
     $("#menu").transition({height: '0', delay: 100}, 500, 'snap', function () {
         $(this).css({'display': 'none'});
+        $("#canvas").css({'display': ''});
     });
+
 });
