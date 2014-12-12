@@ -48,8 +48,31 @@
                     <button id="start" type="button" class="btn-lg btn-block btn-primary">START</button>
                 </div>
                 <div class="col-md-6 col-xs-12 text-nowrap text-center">
-                    <button type="button" class="btn-lg btn-block btn-primary">LOGIN</button>
+                    <button type="button" id="login-btn" class="btn-lg btn-block btn-primary">LOGIN</button>
                 </div>
+            </div>
+            <div id="login" class="row">
+                <div class="row">
+                    <div class="col-md-12 col-xs-12 h1">Login</div>
+                </div>
+                {{ Form::open(['route' => 'sessions.create', 'class' => 'form-horizontal']) }}
+                <div class="row">
+                    <div class="col-md-6 col-md-offset-3">
+                        {{ Form::text('username-login', null, array('class' => 'form-control input-lg text-center', 'placeholder' => 'Username')) }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 col-md-offset-3">
+                        {{ Form::password('password-login', array('class' => 'form-control input-lg text-center', 'placeholder' => 'Password')) }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 col-md-offset-4">
+                        {{ Form::submit('Submit', array('class' => 'btn btn-success', 'value' => 'Submit', 'id' => 'login-btn')) }}
+                    </div>
+                </div>
+
+                {{ Form::close() }}
             </div>
         </div>
     </footer>

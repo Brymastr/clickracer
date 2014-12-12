@@ -8,15 +8,6 @@ $("#canvas").click(function(event) {
     updateCount();
 });
 
-$(function() {
-
-    if (window.innerHeight <= window.innerWidth) {
-        $("#count").css({'font-size':'100vh'});
-    } else {
-        $("#count").css({'font-size':'100vw'});
-    }
-});
-
 function updateCount() {
     var countDiv = document.getElementById("click-counter");
     var count = countDiv.innerHTML;
@@ -24,21 +15,6 @@ function updateCount() {
     count++;
     countDiv.innerHTML = count;
 }
-
-//// Game function
-//$("#start").click(function () {
-//    $("#count").html(0);
-//    $("#content").css({'display':'none'});
-//
-//    var interval = setInterval(function() {
-//            var count = document.getElementById('count').innerHTML;
-//            gameOver(count);
-//            saveScore(count);
-//            clearInterval(interval);
-//        },
-//        10000
-//    );
-//});
 
 function saveScore(score) {
     try {
@@ -83,11 +59,20 @@ $(document).ready(function() {
     $(".preface").css({'display': 'none'});
     $("#click-counter").css({'display': 'none'});
     $("#canvas").css({'display': 'none'});
+    $("#login").css({'display': 'none'});
 
+});
+
+$('#login-btn').click(function() {
+    $('#login')
+        .css({'opacity': '0'})
+        .css({'display': ''})
+        .transition({opacity: 1});
 });
 
 $("#start").click(function() {
     var sec = 3;
+    var timer;
     $("#timed-game")
         .css({'display': ''})
         .addClass('vertical-center');
@@ -128,14 +113,20 @@ $("#start").click(function() {
                                 });
                         });
                 });
-        }
-    );
-
-
+        });
 
     $("#menu").transition({height: '0', delay: 100}, 500, 'snap', function () {
         $(this).css({'display': 'none'});
     });
+
+    timer = setInterval(function() {
+            var count = $('#click-counter').innerHTML;
+            gameOver(count);
+            saveScore(count);
+            clearInterval(timer);
+        },
+        15000 // add 5 seconds for intro animation
+    );
 
 
 
