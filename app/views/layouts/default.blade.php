@@ -51,29 +51,7 @@
                     <button type="button" id="login-btn" class="btn-lg btn-block btn-primary">LOGIN</button>
                 </div>
             </div>
-            <div id="login" class="row">
-                <div class="row">
-                    <div class="col-md-12 col-xs-12 h1">Login</div>
-                </div>
-                {{ Form::open(['route' => 'sessions.create', 'class' => 'form-horizontal']) }}
-                <div class="row">
-                    <div class="col-md-6 col-md-offset-3">
-                        {{ Form::text('username-login', null, array('class' => 'form-control input-lg text-center', 'placeholder' => 'Username')) }}
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6 col-md-offset-3">
-                        {{ Form::password('password-login', array('class' => 'form-control input-lg text-center', 'placeholder' => 'Password')) }}
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-4 col-md-offset-4">
-                        {{ Form::submit('Submit', array('class' => 'btn btn-success', 'value' => 'Submit', 'id' => 'login-btn')) }}
-                    </div>
-                </div>
-
-                {{ Form::close() }}
-            </div>
+            @include('components.login-form')
         </div>
     </footer>
 
@@ -83,8 +61,7 @@
     {{ Form::close() }}
 
     <!-- Scripts -->
-    {{ HTML::script('//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js'); }}
-    <script>window.jQuery || document.write('<script src="js/vendor/jquery-2.1.1.min.js"><\/script>')</script>
+    {{ HTML::script('js/vendor/jquery-2.1.1.min.js'); }}
     {{ HTML::script('js/plugins.js'); }}
     {{ HTML::script('vendor/jquery.transit.min.js'); }}
     {{ HTML::script('js/main.js'); }}
