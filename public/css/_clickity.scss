@@ -8,6 +8,10 @@ h1 {
   font-size: 30pt;
 }
 
+.header-title {
+  font-size: 15vmin;
+}
+
 body {
   overflow: hidden;
 }
@@ -60,6 +64,11 @@ body {
 
   input {
     margin: 5px 0;
+  }
+  
+  .menu-block {
+    margin: 5px;
+    height: 300px;
   }
 }
 

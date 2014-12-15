@@ -43,15 +43,22 @@
     </div>
     <footer id="menu" class="footer">
         <div class="container">
+            
+            <div class="row menu-block">
+                <div class="col-md-12 header-title">
+                    ClickRacer
+                </div>
+                @include('components.login-form')
+            </div> 
             <div class="row">
                 <div class="col-md-6 col-xs-12 text-nowrap text-center">
                     <button id="start" type="button" class="btn-lg btn-block btn-primary">START</button>
                 </div>
                 <div class="col-md-6 col-xs-12 text-nowrap text-center">
-                    <button type="button" id="login-btn" class="btn-lg btn-block btn-primary">LOGIN</button>
+                    <button id="login-btn" type="button" class="btn-lg btn-block btn-primary">LOGIN</button>
                 </div>
             </div>
-            @include('components.login-form')
+            
         </div>
     </footer>
 

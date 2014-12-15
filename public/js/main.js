@@ -49,23 +49,6 @@ $('#login-submit').click(function() {
     return false;
 });
 
-function gameOver(score) {
-    try {
-        $('#score').html(score);
-        $('#submit-score').attr('value', score);
-        $('#finish')
-            .css({'display': 'inline-block'})
-            .animate({
-                top: 0
-            }, 400);
-        $('#canvas').css({'pointer-events': 'none'});
-    } catch(err) {alert("gameOver(): " + err.message);}
-}
-
-$('#again').click(function() {
-    location.reload();
-});
-
 $(document).ready(function() {
     $("#menu")
         .transition({height: '100vh', delay: 500}, 500, 'snap')
@@ -80,7 +63,14 @@ $(document).ready(function() {
 });
 
 $('#login-btn').click(function() {
+    
+    $('.header-title')
+        .transition({opacity: 0}, function() {
+            $(this).css({'display': 'none'});
+    });
+    
     $('#login')
+        .delay(800)
         .css({'opacity': '0'})
         .css({'display': ''})
         .transition({opacity: 1});
