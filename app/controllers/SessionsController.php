@@ -37,12 +37,7 @@ class SessionsController extends \BaseController {
             'password' => Input::get('password')
         ))) {
             Auth::user();
-            return Redirect::to('/');
         }
-
-        return Redirect::back()
-            ->with('message', 'Email/password incorrect')
-            ->withInput();
 	}
 
 

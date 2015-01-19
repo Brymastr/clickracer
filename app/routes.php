@@ -18,5 +18,6 @@ Route::resource('game', 'GameController');
 Route::resource('users', 'UsersController');
 
 Route::resource('sessions', 'SessionsController');
+Route::post('sessions', 'SessionsController@store');
 
 Route::get('logout', 'SessionsController@destroy');

@@ -33,20 +33,23 @@ function saveScore(score) {
     } catch(err) {alert("saveScore(): " + err.message);}
 }
 
-$('#login-submit').click(function() {
-    
-    var username = $('#username-login').val();
-    var password = $('#password-login').val();
-    var dataString = 'username=' + username + '&password=' + password;
-    $.ajax({
-        type: 'POST',
-        url: 'sessions.store',
-        data: dataString,
-        success: function() {
-            alert('Form submitted');
-        }
-    });
-    return false;
+$('#login-form').submit(function(e) {
+    try {
+        e.preventDefault();
+        var username = $('#username-login').val();
+        var password = $('#password-login').val();
+        var dataString = 'username=' + username + '&password=' + password;
+        $.ajax({
+            type: 'POST',
+            url: 'sessions',
+            data: dataString,
+            success: function (data) {
+                console.log('form submitted')
+            }
+        });
+    } catch (err) {
+        alert(err.message);
+    }
 });
 
 $(document).ready(function() {
