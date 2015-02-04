@@ -25,7 +25,7 @@ function saveScore(score) {
                 "score": $( '#submit-score' ).val()
             },
             function( data ) {
-                //do something with data/response returned by server
+                alert(data);
             },
             'json'
         );
@@ -33,6 +33,7 @@ function saveScore(score) {
     } catch(err) {alert("saveScore(): " + err.message);}
 }
 
+// AJAX login form submission
 $('#login-form').submit(function(e) {
     try {
         e.preventDefault();
@@ -44,7 +45,7 @@ $('#login-form').submit(function(e) {
             url: 'sessions',
             data: dataString,
             success: function (data) {
-                console.log('Form submitted');
+                console.log('Login form submitted');
                 $('#login')
                     .transition({opacity: 0}, function() {
                         $(this).css({'display': 'none'});
@@ -62,6 +63,43 @@ $('#login-form').submit(function(e) {
     }
 });
 
+// AJAX register form submission
+$('#register-form').submit(function(e) {
+    try {
+        e.preventDefault();
+        var username = $('#username-register').val();
+        var password = $('#password-register').val();
+        var firstname = $('#firstname-register').val();
+
+        var dataString = 'username=' + username
+            + '&password=' + password
+            + '&firstname=' + firstname;
+
+        $.ajax({
+            type: 'POST',
+            url: 'users',
+            data: dataString,
+            success: function (data) {
+                console.log('Registration form submitted');
+                $('#register')
+                    .transition({opacity: 0}, function() {
+                        $(this).css({'display': 'none'});
+                    });
+
+                $('#header-title')
+                    .delay(700)
+                    .css({'opacity': '0'})
+                    .css({'display': ''})
+                    .transition({opacity: 1});
+
+                // TODO: Display user's name
+            }
+        });
+    } catch (err) {
+        alert(err.message);
+    }
+});
+
 $(document).ready(function() {
     $("#menu")
         .transition({height: '100vh', delay: 500}, 500, 'snap')
@@ -72,6 +110,7 @@ $(document).ready(function() {
     $("#click-counter").css({'display': 'none'});
     $("#canvas").css({'display': 'none'});
     $("#login").css({'display': 'none'});
+    $("#register").css({'display': 'none'});
 
 });
 
@@ -83,6 +122,20 @@ $('#login-btn').click(function() {
     });
     
     $('#login')
+        .delay(800)
+        .css({'opacity': '0'})
+        .css({'display': ''})
+        .transition({opacity: 1});
+});
+
+$('#register-btn').click(function() {
+
+    $('.header-title')
+        .transition({opacity: 0}, function() {
+            $(this).css({'display': 'none'});
+        });
+
+    $('#register')
         .delay(800)
         .css({'opacity': '0'})
         .css({'display': ''})

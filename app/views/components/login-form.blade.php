@@ -5,12 +5,12 @@
     {{ Form::open([null, 'class' => 'form-horizontal', 'id' => 'login-form']) }}
     <div class="row">
         <div class="col-md-6 col-md-offset-3">
-            {{ Form::text('username-login', null, array('class' => 'form-control input-lg text-center', 'placeholder' => 'Username')) }}
+            {{ Form::text('username-login', null, array('id' => 'username-login', 'class' => 'form-control input-lg text-center', 'placeholder' => 'Username')) }}
         </div>
     </div>
     <div class="row">
         <div class="col-md-6 col-md-offset-3">
-            {{ Form::password('password-login', array('class' => 'form-control input-lg text-center', 'placeholder' => 'Password')) }}
+            {{ Form::password('password-login', array('id' => 'password-login', 'class' => 'form-control input-lg text-center', 'placeholder' => 'Password')) }}
         </div>
     </div>
     <div class="row">

@@ -18,7 +18,6 @@ class CreateUsersTable extends Migration {
 
             $table->string('username')->unique();
             $table->string('firstname')->nullable();
-            $table->string('emailaddress');
             $table->string('password');
 
             $table->nullableTimestamps();
@@ -32,10 +31,7 @@ class CreateUsersTable extends Migration {
      */
     public function down()
     {
-        Schema::table('users', function(Blueprint $table) {
-
-            $table->dropPrimary('id');
-        });
+        Schema::dropIfExists('users');
     }
 
 }

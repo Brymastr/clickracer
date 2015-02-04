@@ -46,16 +46,20 @@
                     ClickRacer
                 </div>
                 @include('components.login-form')
+                @include('components.register-form')
                 <div class="col-md-12" id="username-title">
                     {{--user's name goes here--}}
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-6 col-xs-12 text-nowrap text-center">
+                <div class="col-md-4 col-xs-12 text-nowrap text-center">
                     <button id="start" type="button" class="btn-lg btn-block btn-primary">START</button>
                 </div>
-                <div class="col-md-6 col-xs-12 text-nowrap text-center">
+                <div class="col-md-4 col-xs-12 text-nowrap text-center">
                     <button id="login-btn" type="button" class="btn-lg btn-block btn-primary">LOGIN</button>
+                </div>
+                <div class="col-md-4 col-xs-12 text-nowrap text-center">
+                    <button id="register-btn" type="button" class="btn-lg btn-block btn-primary">REGISTER</button>
                 </div>
             </div>
 

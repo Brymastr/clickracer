@@ -37,13 +37,8 @@ class UsersController extends \BaseController {
 	 */
 	public function store()
 	{
+
         $date = new \DateTime;
-
-        $input = Input::all();
-
-        if(! $this->user->fill($input)->isValid()) {
-            return Redirect::back()->withInput()->withErrors($this->user->messages);
-        }
 
         $this->user->username = Input::get('username');
 
@@ -76,7 +71,6 @@ class UsersController extends \BaseController {
         $score->updated_at = $date;
         $score->save();
 
-        return Redirect::to('/');
 	}
 
 

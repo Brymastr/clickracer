@@ -15,9 +15,10 @@ Route::get('/', 'GameController@index');
 
 Route::resource('game', 'GameController');
 
+Route::post('users', 'UsersController@store');
 Route::resource('users', 'UsersController');
 
-Route::resource('sessions', 'SessionsController');
 Route::post('sessions', 'SessionsController@store');
+Route::resource('sessions', 'SessionsController');
 
 Route::get('logout', 'SessionsController@destroy');
