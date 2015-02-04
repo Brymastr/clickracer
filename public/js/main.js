@@ -44,7 +44,17 @@ $('#login-form').submit(function(e) {
             url: 'sessions',
             data: dataString,
             success: function (data) {
-                console.log('form submitted')
+                console.log('Form submitted');
+                $('#login')
+                    .transition({opacity: 0}, function() {
+                        $(this).css({'display': 'none'});
+                    });
+
+                $('#header-title')
+                    .delay(700)
+                    .css({'opacity': '0'})
+                    .css({'display': ''})
+                    .transition({opacity: 1});
             }
         });
     } catch (err) {
@@ -57,8 +67,8 @@ $(document).ready(function() {
         .transition({height: '100vh', delay: 500}, 500, 'snap')
         .find("div").css({'display': ''});
 
-    $("div[id$='game']").css({'display': 'none'});
-    $(".preface").css({'display': 'none'});
+    //$("div[id$='game']").css({'display': 'none'});
+    //$(".preface").css({'display': 'none'});
     $("#click-counter").css({'display': 'none'});
     $("#canvas").css({'display': 'none'});
     $("#login").css({'display': 'none'});

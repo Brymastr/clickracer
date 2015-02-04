@@ -35,21 +35,21 @@
 <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 <![endif]-->
 
-<!-- Div for accepting clicks. Expands entire size of screen -->
-{{--<div id="canvas"></div>--}}
-
     <div class="container">
         @yield('content')
     </div>
     <footer id="menu" class="footer">
         <div class="container">
-            
+
             <div class="row menu-block">
-                <div class="col-md-12 header-title">
+                <div class="col-md-12 header-title" id="header-title">
                     ClickRacer
                 </div>
                 @include('components.login-form')
-            </div> 
+                <div class="col-md-12" id="username-title">
+                    {{--user's name goes here--}}
+                </div>
+            </div>
             <div class="row">
                 <div class="col-md-6 col-xs-12 text-nowrap text-center">
                     <button id="start" type="button" class="btn-lg btn-block btn-primary">START</button>
@@ -58,7 +58,7 @@
                     <button id="login-btn" type="button" class="btn-lg btn-block btn-primary">LOGIN</button>
                 </div>
             </div>
-            
+
         </div>
     </footer>
 
