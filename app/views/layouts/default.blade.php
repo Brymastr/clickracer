@@ -38,9 +38,9 @@
     <div class="container">
         @yield('content')
     </div>
+
     <footer id="menu" class="footer">
         <div class="container">
-
             <div class="row menu-block">
                 <div class="col-md-12 header-title" id="header-title">
                     ClickRacer
@@ -62,7 +62,6 @@
                     <button id="register-btn" type="button" class="btn-lg btn-block btn-primary">REGISTER</button>
                 </div>
             </div>
-
         </div>
     </footer>
 

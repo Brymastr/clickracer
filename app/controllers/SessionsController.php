@@ -36,8 +36,9 @@ class SessionsController extends \BaseController {
             'username' => Input::get('username'),
             'password' => Input::get('password')
         ))) {
-            Auth::user();
-        }
+			return Auth::user();
+		}
+		return "Not logged in";
 	}
 
 

@@ -31,7 +31,7 @@ class GameController extends \BaseController {
 	 */
 	public function store()
 	{
-        if(Auth::check()) { // && Request::ajax()
+        if(Auth::check()) {
             $user = Auth::user();
             $date = new \DateTime;
 

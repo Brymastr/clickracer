@@ -1,3 +1,4 @@
+// Detect each click on the canvas
 $("#canvas").click(function(event) {
     if(event.button == 2) {
         return false;
@@ -8,6 +9,7 @@ $("#canvas").click(function(event) {
     updateCount();
 });
 
+// Update the counter div
 function updateCount() {
     var countDiv = document.getElementById("click-counter");
     var count = countDiv.innerHTML;
@@ -16,13 +18,15 @@ function updateCount() {
     countDiv.innerHTML = count;
 }
 
+// Save the score to the database
 function saveScore(score) {
     try {
         var $form = $('#save-game');
         $.post(
             $form.prop( 'action' ),
             {
-                "score": $( '#submit-score' ).val()
+                "score": $('#submit-score').val(),
+                "token": $("[name='_token']").val()
             },
             function( data ) {
                 alert(data);
@@ -31,6 +35,14 @@ function saveScore(score) {
         );
 
     } catch(err) {alert("saveScore(): " + err.message);}
+}
+
+// Function called at the end of the game
+function gameOver(score) {
+    try {
+        $('#submit-score').attr('value', score);
+        $('#canvas').css({'pointer-events': 'none'});
+    } catch(err) {alert("gameOver(): " + err.message);}
 }
 
 // AJAX login form submission
@@ -44,8 +56,9 @@ $('#login-form').submit(function(e) {
             type: 'POST',
             url: 'sessions',
             data: dataString,
-            success: function (data) {
+            success: function (data) {  // data is already json!!!
                 console.log('Login form submitted');
+                console.log('Logged in user: ' + data);
                 $('#login')
                     .transition({opacity: 0}, function() {
                         $(this).css({'display': 'none'});
@@ -56,12 +69,22 @@ $('#login-form').submit(function(e) {
                     .css({'opacity': '0'})
                     .css({'display': ''})
                     .transition({opacity: 1});
+
+                setUsernameText(data);
+
             }
         });
     } catch (err) {
         alert(err.message);
     }
 });
+
+function setUsernameText(user) {
+    if(user.firstname != null)
+        $('#username-title').text(user.firstname);
+    else
+        $('#username-title').text(user.username);
+}
 
 // AJAX register form submission
 $('#register-form').submit(function(e) {
@@ -197,7 +220,7 @@ $("#start").click(function() {
             saveScore(count);
             clearInterval(timer);
         },
-        15000 // add 5 seconds for intro animation
+        1000 // add 5 seconds for intro animation
     );
 
 
