@@ -13,7 +13,7 @@
 
 Route::get('/', 'GameController@index');
 
-Route::resource('game', 'GameController');
+Route::resource('game', ['before' => 'csrf', 'GameController']);
 
 Route::post('users', ['before' => 'csrf', 'UsersController@store']);
 Route::resource('users', 'UsersController');

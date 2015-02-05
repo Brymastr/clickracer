@@ -220,7 +220,7 @@ $("#start").click(function() {
             saveScore(count);
             clearInterval(timer);
         },
-        1000 // add 5 seconds for intro animation
+        15000 // add 5 seconds for intro animation
     );
 
 
