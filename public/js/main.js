@@ -138,12 +138,12 @@ $(document).ready(function() {
 });
 
 $('#login-btn').click(function() {
-    
+
     $('.header-title')
         .transition({opacity: 0}, function() {
             $(this).css({'display': 'none'});
-    });
-    
+        });
+
     $('#login')
         .delay(800)
         .css({'opacity': '0'})
