@@ -152,6 +152,12 @@ $('#login-btn').click(function() {
             $(this).css({'display': 'none'});
         });
 
+    $('#register')
+        .delay(800)
+        .css({'opacity': '1'})
+        .transition({opacity: 0})
+        .css({'display': 'none'});
+
     $('#login')
         .delay(800)
         .css({'opacity': '0'})
@@ -165,6 +171,12 @@ $('#register-btn').click(function() {
         .transition({opacity: 0}, function() {
             $(this).css({'display': 'none'});
         });
+
+    $('#login')
+        .delay(800)
+        .css({'opacity': '1'})
+        .transition({opacity: 0})
+        .css({'display': 'none'});
 
     $('#register')
         .delay(800)
