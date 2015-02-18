@@ -47,6 +47,13 @@ class GameController extends \BaseController {
 
 	}
 
+    /**
+     * Get the highscores
+     */
+    public function highscores() {
+
+    }
+
 
 	/**
 	 * Display the specified resource.

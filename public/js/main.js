@@ -228,13 +228,16 @@ $("#start").click(function() {
             saveScore(count);
             clearInterval(timer);
             celebrate(count);
-            setTimeout(backToMenu, 1000);
+            setTimeout(backToMenu(count), 1000);
         },
         6000 // add 5 seconds for intro animation
     );
 });
 
-function backToMenu() {
+function backToMenu(score) {
+
+    $('#game-score').text('Score: ' + score);
+
     $("#menu").css({'display': ''});
     loadMenu();
     setTimeout(removeVertCenter, 950);

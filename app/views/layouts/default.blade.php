@@ -47,6 +47,7 @@
                 </div>
                 @include('components.login-form')
                 @include('components.register-form')
+                @include('components.scores-table')
                 <div class="col-md-12" id="username-title">
                     {{--user's name goes here--}}
                 </div>

@@ -15,6 +15,8 @@ Route::get('/', 'GameController@index');
 
 Route::resource('game','GameController');
 
+Route::get('highscores','GameController@highscores');
+
 Route::post('users', 'UsersController@store');
 Route::resource('users', 'UsersController');
 
