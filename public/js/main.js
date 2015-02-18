@@ -129,6 +129,10 @@ $('#register-form').submit(function(e) {
 });
 
 $(document).ready(function() {
+    loadMenu();
+});
+
+function loadMenu() {
     $("#menu")
         .transition({height: '100vh', delay: 500}, 500, 'snap')
         .find("div").css({'display': ''});
@@ -139,8 +143,7 @@ $(document).ready(function() {
     $("#canvas").css({'display': 'none'});
     $("#login").css({'display': 'none'});
     $("#register").css({'display': 'none'});
-
-});
+}
 
 $('#login-btn').click(function() {
 
@@ -225,16 +228,23 @@ $("#start").click(function() {
             saveScore(count);
             clearInterval(timer);
             celebrate(count);
-            setTimeout(backToMenu, 3000);
+            setTimeout(backToMenu, 1000);
         },
         6000 // add 5 seconds for intro animation
     );
 });
 
 function backToMenu() {
-    alert("backToMenu()");
+    $("#menu").css({'display': ''});
+    loadMenu();
+    setTimeout(removeVertCenter, 950);
+}
+
+function removeVertCenter() {
+    $("#timed-game")
+        .removeClass('vertical-center');
 }
 
 function celebrate(count) {
-
+    // Nothing yet
 }
