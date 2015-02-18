@@ -21,6 +21,7 @@ function updateCount() {
 // Save the score to the database
 function saveScore(score) {
     try {
+        console.log("Score: " + score);
         var $form = $('#save-game');
         $.post(
             $form.prop( 'action' ),
@@ -29,7 +30,7 @@ function saveScore(score) {
                 "token": $("[name='_token']").val()
             },
             function( data ) {
-                alert(data);
+
             },
             'json'
         );
@@ -215,12 +216,12 @@ $("#start").click(function() {
     });
 
     timer = setInterval(function() {
-            var count = $('#click-counter').innerHTML;
+            var count = $('#click-counter').text();
             gameOver(count);
             saveScore(count);
             clearInterval(timer);
         },
-        15000 // add 5 seconds for intro animation
+        6000 // add 5 seconds for intro animation
     );
 
 
