@@ -194,29 +194,30 @@ $("#start").click(function() {
 
     $(".preface")
         .css({'display': ''})
+        .css({'rotateY': '0deg'})
         .delay(1100)
-        .transition({rotateY: '90deg'}, function() {
+        .transition({rotateY: '90deg'}, function () {
             $(this).css({'display': 'none'});
             $('#click-counter')
                 .text(sec)
                 .css({'display': ''})
                 .css({'rotateY': '90'})
-                .transition({rotateY: '0deg'}, function() {
+                .transition({rotateY: '0deg'}, function () {
                     $('#click-counter')
                         .delay(350)
-                        .transition({rotateY: '90deg'}, function() {
+                        .transition({rotateY: '90deg'}, function () {
                             $('#click-counter')
                                 .text(--sec)
-                                .transition({rotateY: '0deg'}, function() {
+                                .transition({rotateY: '0deg'}, function () {
                                     $('#click-counter')
                                         .delay(350)
-                                        .transition({rotateY: '90deg'}, function() {
+                                        .transition({rotateY: '90deg'}, function () {
                                             $('#click-counter')
                                                 .text(--sec)
-                                                .transition({rotateY: '0deg'}, function() {
+                                                .transition({rotateY: '0deg'}, function () {
                                                     $('#click-counter')
                                                         .delay(350)
-                                                        .transition({rotateY: '90deg'}, function() {
+                                                        .transition({rotateY: '90deg'}, function () {
                                                             $('#click-counter')
                                                                 .text('GO')
                                                                 .css({'rotateY': '0'});
