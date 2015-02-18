@@ -45,7 +45,6 @@ function gameOver(score) {
             score = 0;
             $('#click-counter').text("0");
         }
-
         $('#submit-score').attr('value', score);
         $('#canvas').css({'pointer-events': 'none'});
     } catch(err) {alert("gameOver(): " + err.message);}
@@ -225,6 +224,7 @@ $("#start").click(function() {
             gameOver(count);
             saveScore(count);
             clearInterval(timer);
+            celebrate(count);
             setTimeout(backToMenu, 3000);
         },
         6000 // add 5 seconds for intro animation
@@ -233,4 +233,8 @@ $("#start").click(function() {
 
 function backToMenu() {
     alert("backToMenu()");
+}
+
+function celebrate(count) {
+
 }
