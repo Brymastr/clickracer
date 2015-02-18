@@ -18,6 +18,8 @@
     {{ HTML::style('css/animate.css'); }}
     {{ HTML::style('css/main.css'); }}
     {{ HTML::script('js/vendor/modernizr-2.6.2.min.js'); }}
+
+    {{ HTML::style('font/font-awesome-4.3.0/css/font-awesome.min.css'); }}
 </head>
 <body>
 <!-- Google Analytics -->
